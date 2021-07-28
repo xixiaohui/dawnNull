@@ -13,7 +13,7 @@
                     <li class="splide__slide">
                       <div class="element">  
                         <a href="{{ product.url}}">
-                          <img src="{{ product.featured_image | img_url: '400x520' }}" >
+                          <img src="{{ product.featured_image | img_url: '300x390' }}" >
                           </a>
 <!--                           {{ product.title }}  - {{ product.price | money }} -->
 
@@ -51,7 +51,7 @@
 {% javascript %}
   document.addEventListener( 'DOMContentLoaded', function () {
     new Splide( '#image-slider' ,{
-                perPage: 3,
+                perPage: 4,
 	            rewind : true,
             } ).mount();
   });
