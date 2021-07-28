@@ -12,7 +12,7 @@
                   {% for product in collection.products %}
                     <li class="splide__slide">
                       <div>
-                        <img src="{{ product.featured_image | img_url: '600x' }}" >
+                        <img src="{{ product.featured_image | img_url: '600x780' }}" >
                       </div>
                       <a href="{{ product.url}}">
                         {{ product.title }}  - {{ product.price | money }}
