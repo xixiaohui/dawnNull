@@ -49,6 +49,9 @@
 
 {% javascript %}
   document.addEventListener( 'DOMContentLoaded', function () {
-    new Splide( '#image-slider' ).mount();
+    new Splide( '#image-slider' ,{
+                perPage: 4,
+	            rewind : true,
+            } ).mount();
   });
 {% endjavascript %}
