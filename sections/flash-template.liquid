@@ -1,0 +1,29 @@
+
+<div>
+  <ul>
+    {% for collection in collections %}
+      {% if collection.title == "Flash Sale"  %}
+        {% paginate collection.products by 12 %}
+          {% for product in collection.products %}
+            <a href="{{ product.url}}">
+              <li>{{ product.title }}  - {{ product.price | money }}</li>
+            </a>
+          {% endfor %}
+        {% endpaginate %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
