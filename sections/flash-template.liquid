@@ -4,7 +4,13 @@
     {% for collection in collections %}
       {% if collection.title == "Flash Sale"  %}
         {% paginate collection.products by 12 %}
+
+        
           {% for product in collection.products %}
+
+            <div>
+              <img src="{{ product | img_url}}">
+            </div>
             <a href="{{ product.url}}">
               <li>{{ product.title }}  - {{ product.price | money }}</li>
             </a>
@@ -14,6 +20,8 @@
     {% endfor %}
   </ul>
 </div>
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+{{ 'splide.min.js' | asset_url | script_tag }}
 
 {% schema %}
   {
