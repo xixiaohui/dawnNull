@@ -5,16 +5,25 @@
       {% if collection.title == "Flash Sale"  %}
         {% paginate collection.products by 12 %}
 
-        
-          {% for product in collection.products %}
-
-            <div>
-              <img src="{{ product | img_url}}">
+          <div id="image-slider" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    
+                  {% for product in collection.products %}
+                    <li>
+                      <div>
+                        <img src="{{ product | img_url : 600x }}">
+                      </div>
+                      <a href="{{ product.url}}">
+                        {{ product.title }}  - {{ product.price | money }}
+                      
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
             </div>
-            <a href="{{ product.url}}">
-              <li>{{ product.title }}  - {{ product.price | money }}</li>
-            </a>
-          {% endfor %}
+          </div>
+
         {% endpaginate %}
       {% endif %}
     {% endfor %}
