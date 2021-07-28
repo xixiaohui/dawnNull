@@ -11,8 +11,8 @@
                     
                   {% for product in collection.products %}
                     <li class="splide__slide">
-                      <div>
-                        <img src="{{ product.featured_image | img_url: '600x780' }}" >
+                      <div class="element">
+                        <img src="{{ product.featured_image | img_url: '600x520' }}" >
                       </div>
                       <a href="{{ product.url}}">
                         {{ product.title }}  - {{ product.price | money }}
@@ -40,6 +40,9 @@
 {% endschema %}
 
 {% stylesheet %}
+	.element{
+		margin:0 auto;
+	}
 {% endstylesheet %}
 
 {% javascript %}
