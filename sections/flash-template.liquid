@@ -14,9 +14,10 @@
                       <div class="element">  
                         <a href="{{ product.url}}">
                           <img src="{{ product.featured_image | img_url: '600x520' }}" >
+                          </a>
                           {{ product.title }}  - {{ product.price | money }}
 
-                        </a>
+                        
                       </div>
                     </li>
                   {% endfor %}
