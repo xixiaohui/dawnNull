@@ -13,11 +13,12 @@
                     <li>
                       <div>
                         <img src="{{ product.featured_image | img_url: '600x' }}">
-                      </div>
-                      <a href="{{ product.url}}">
-                        {{ product.title }}  - {{ product.price | money }}
                       
-                      </a>
+                        <a href="{{ product.url}}">
+                          {{ product.title }}  - {{ product.price | money }}
+
+                        </a>
+                       </div>
                     </li>
                   {% endfor %}
                 </ul>
