@@ -8,8 +8,8 @@
 {% assign relatedProduct = all_products[relatedProduct_handle] %}
 
   
-  <a href="{{ relatedProduct.url }}" class="{% if relatedProduct_handle == current_handle%} special {% endif %}">
-	<img src="{{ relatedProduct.featured_image | img_url: '100x' }}">
+  <a href="{{ relatedProduct.url }}" class="">
+	<img class="normal {% if relatedProduct_handle == current_handle%}special{% endif %}" src="{{ relatedProduct.featured_image | img_url: '100x' }}">
 
   </a>
 
@@ -27,7 +27,7 @@
 		border: 1px solid #333;
 	}
 
-  .customColor img{
+  .normal{
       min-width: 100px !important;
       height: 100px !important;
       border-radius: 50%;
