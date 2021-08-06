@@ -1,5 +1,6 @@
 {% assign relatedProduct_handles = combineproduct.metafields.meta.related  | split: ',' %}
 
+
 <div class="customColor" title="{{ relatedProduct.title }}">
   
 {% for relatedProduct_handle in relatedProduct_handles%}
@@ -49,5 +50,6 @@
 <script type="text/javascript">
   
   
-  console.log("{{ relatedProduct_handles }}");
+  console.log("{{ current_handle }}");
+              
 </script>
