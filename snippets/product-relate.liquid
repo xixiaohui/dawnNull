@@ -1,14 +1,14 @@
 {% assign relatedProduct_handles = combineproduct.metafields.meta.related  | split: ',' %}
 
 
-<div class="customColor" title="{{ relatedProduct.title }}">
+<div class="customColor">
   
 {% for relatedProduct_handle in relatedProduct_handles%}
 
 {% assign relatedProduct = all_products[relatedProduct_handle] %}
 
   
-  <a href="{{ relatedProduct.url }}" class="">
+  <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
 	<img class="normal {% if relatedProduct_handle == current_handle%}special{% endif %}" src="{{ relatedProduct.featured_image | img_url: '100x' }}">
 
   </a>
@@ -42,7 +42,7 @@
       line-height: 42px;
       white-space: nowrap;
       text-transform: uppercase;
-	  float: left;
+	
 		
 	}
 
