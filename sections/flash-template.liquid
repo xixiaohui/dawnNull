@@ -10,14 +10,13 @@
                 <ul class="splide__list">
                     
                   {% for product in collection.products %}
-                    <li>
-                      <div>
-                        <img src="{{ product | img_url : 600x }}">
+                    <li class="splide__slide">
+                      <div class="element">  
+                        <a href="{{ product.url}}">
+                          <img src="{{ product.featured_image | img_url: '400x400' }}" >
+                          </a>
+<!--                           {{ product.title }}  - {{ product.price | money }} -->                    
                       </div>
-                      <a href="{{ product.url}}">
-                        {{ product.title }}  - {{ product.price | money }}
-                      
-                      </a>
                     </li>
                   {% endfor %}
                 </ul>
@@ -29,6 +28,7 @@
     {% endfor %}
   </ul>
 </div>
+
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
 {{ 'splide.min.js' | asset_url | script_tag }}
 
@@ -40,7 +40,17 @@
 {% endschema %}
 
 {% stylesheet %}
+	.element{
+		display:flex;
+    justify-content:center;
+	}
 {% endstylesheet %}
 
 {% javascript %}
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#image-slider' ,{
+                perPage: 4,
+	              rewind : true,
+            } ).mount();
+  });
 {% endjavascript %}
