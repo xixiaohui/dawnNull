@@ -92,6 +92,8 @@
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
+        	
+        	{% render 'product-relate',combineproduct:product,current_handle:"{{ product.handle}}" %}
           {%- when 'description' -%}
             {%- if product.description != blank -%}
               <div class="product__description rte">
