@@ -5,7 +5,7 @@
 {% capture title %}
     <div>
         <a href="">
-            <img src="{{ section.settings.banner| img_url:'600x'}}">
+            <img src="{{ section.settings.banner| img_url:'100x'}}">
         </a>
     </div>
 {% endcapture%}
@@ -26,6 +26,16 @@
     {% endfor %}
 </div>
 
+    {% assign combineproduct = all_products['black-bucket-boots'] %}
+
+    <div>
+        <a href="{{ combineproduct.url }}">
+            <img src="{{ combineproduct.featured_image | img_url: '600x' }}">
+        </a>
+        <div>
+            <p>{{ combineproduct.title }}<span>{{ combineproduct.price }} </span></p>
+        </div>
+    </div>
 {% endpaginate %}
 
 {% schema %}
