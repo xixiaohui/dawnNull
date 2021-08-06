@@ -4,14 +4,7 @@
 
 {% assign relatedProduct = all_products[relatedProduct_handle] %}
 
-<div class="relate">
-  <a href="{{ relatedProduct.url }}">
-    <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
-  </a>
-  <div>
-    <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
-  </div>
-</div>
+
 
 <div class="swatch-element custom  pro_vala-baby-blue-patent show" title="{{ relatedProduct.title }}">
   <a href="{{ relatedProduct.url }}" class="customColor">
@@ -22,7 +15,23 @@
 {% endfor %}
 
 {% style %}
-  .relate{
-		background-color: blueviolet;
+  .customColor label{
+      min-width: 100px !important;
+      height: 100px !important;
+      border-radius: 50%;
+      box-shadow: 0 0 0 !important;
+      -webkit-box-shadow: 0 0 0 !important;
+      background-position: center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      outline: none !important;
+      margin: 0;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      text-align: center;
+      line-height: 42px;
+      white-space: nowrap;
+      text-transform: uppercase;
 	}
 {% endstyle %}
