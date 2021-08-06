@@ -9,8 +9,8 @@
 <div class="customColor" title="{{ relatedProduct.title }}">
   
   <a href="{{ relatedProduct.url }}" class="">
+	<img src="{{ relatedProduct.featured_image | img_url: '100x' }}">
 
-    <label style="background-image: url('{{ relatedProduct.featured_image | img_url: '100x' }}');"></label>
   </a>
 </div>
 {% endfor %}
@@ -23,7 +23,7 @@
 	  
   }
 
-  .customColor label{
+  .customColor img{
       min-width: 100px !important;
       height: 130px !important;
       border-radius: 50%;
