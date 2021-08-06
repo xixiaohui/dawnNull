@@ -38,17 +38,23 @@
     </div>
 	
 
-	{% assign relatedProduct_handle = combineproduct.metafields.meta.related  %}
-	{% assign relatedProduct = all_products[relatedProduct_handle] %}
+	{% assign relatedProduct_handles = combineproduct.metafields.meta.related  | split: ',' %}
 
-    <div>
-        <a href="{{ relatedProduct.url }}">
-            <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
-        </a>
+	{% for relatedProduct_handle in relatedProduct_handles%}
+		
+		{% assign relatedProduct = all_products[relatedProduct_handle] %}
+
         <div>
-            <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
+            <a href="{{ relatedProduct.url }}">
+                <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
+            </a>
+            <div>
+                <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
+            </div>
         </div>
-    </div>
+	{% endfor %}
+
+	
     
 {% endpaginate %}
 
