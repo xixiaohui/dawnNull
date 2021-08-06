@@ -44,7 +44,7 @@
 		
 		{% assign relatedProduct = all_products[relatedProduct_handle] %}
 
-        <div>
+        <div class="relate">
             <a href="{{ relatedProduct.url }}">
                 <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
             </a>
