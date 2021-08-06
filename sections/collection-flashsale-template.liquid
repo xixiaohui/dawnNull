@@ -36,7 +36,19 @@
             <p>{{ combineproduct.title }}<span>{{ combineproduct.price | money}} </span></p>
         </div>
     </div>
+	
 
+	{% assign relatedProduct_handle = "{{ combineproduct.metafields.meta.related }}" %}
+	{% assign relatedProduct = all_products[relatedProduct_handle] %}
+
+    <div>
+        <a href="{{ relatedProduct.url }}">
+            <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
+        </a>
+        <div>
+            <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
+        </div>
+    </div>
     
     <div>
       <p> {{ combineproduct.metafields.meta.related }}</p>
