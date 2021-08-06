@@ -8,7 +8,7 @@
 {% assign relatedProduct = all_products[relatedProduct_handle] %}
 
   
-  <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
+  <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}" class = "relatedlink">
 	<img class="normal {% if relatedProduct_handle == current_handle%}special{% endif %}" src="{{ relatedProduct.featured_image | img_url: '100x' }}">
 
   </a>
