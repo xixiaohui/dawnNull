@@ -38,15 +38,9 @@
     </div>
 
     {% assign related_product_handle = "{{ combineproduct.metafields.meta.related_products.value }}" %}
-    {% assign relatedProduct = all_products[related_product_handle] %}
     <div>
-        <a href="{{ relatedProduct.url }}">
-            <img src="{{ relatedProduct.featured_image | img_url: '600x' }}">
-        </a>
-        <div>
-            <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
-        </div>
-    </div>
+      <p> {{ combineproduct.metafields.meta.related_products.value }}</p>
+	</div>
 
 {% endpaginate %}
 
