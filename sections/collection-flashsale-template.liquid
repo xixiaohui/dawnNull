@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    {% assign related_product_handle = "brown-bucket-boots" %}
+    {% assign related_product_handle = "{{ combineproduct.metafields.meta.related_products.value }}" %}
     {% assign relatedProduct = all_products[related_product_handle] %}
     <div>
         <a href="{{ relatedProduct.url }}">
