@@ -12,6 +12,13 @@
     <p>{{ relatedProduct.title }}<span>{{ relatedProduct.price | money}} </span></p>
   </div>
 </div>
+
+<div class="swatch-element custom  pro_vala-baby-blue-patent show" title="{{ relatedProduct.title }}">
+  <a href="{{ relatedProduct.url }}" class="customColor">
+
+    <label style="background-image: url('{{ relatedProduct.featured_image | img_url: '100x' }}');"></label>
+  </a>
+</div>
 {% endfor %}
 
 {% style %}
