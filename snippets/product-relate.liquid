@@ -1,19 +1,19 @@
 {% assign relatedProduct_handles = combineproduct.metafields.meta.related  | split: ',' %}
 
+<div class="customColor" title="{{ relatedProduct.title }}">
+  
 {% for relatedProduct_handle in relatedProduct_handles%}
 
 {% assign relatedProduct = all_products[relatedProduct_handle] %}
 
-
-
-<div class="customColor" title="{{ relatedProduct.title }}">
   
   <a href="{{ relatedProduct.url }}" class="">
 	<img src="{{ relatedProduct.featured_image | img_url: '100x' }}">
 
   </a>
-</div>
+
 {% endfor %}
+</div>
 
 {% style %}
   .customColor{
