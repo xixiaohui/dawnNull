@@ -40,9 +40,7 @@
     
     <div>
       <p> {{ combineproduct.metafields.meta.related.value }}</p>
-      {% for field in combineproduct.metafields.meta %}
-        {{ field | metafield_tag }}
-      {% endfor %}
+     
 	</div>
 
 {% endpaginate %}
